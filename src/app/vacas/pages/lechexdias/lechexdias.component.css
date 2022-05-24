@@ -1,0 +1,30 @@
+
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.th-title{
+    text-align: center;
+
+}
+
+td ,th{
+    text-align: center ;
+    height: 60px;
+    vertical-align: middle;
+}
+button{
+    margin-left: 1em;
+    height: 40px;
+
+}
+
+.date{
+
+    height: 20px;
+    width: 500px;
+}
+

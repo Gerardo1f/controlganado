@@ -1,0 +1,29 @@
+
+<h1 mat-dialog-title >Historial de Inseminaciones</h1>
+<div mat-dialog-content>
+  <table>
+    <thead>
+      <th>Lista de Inseminaciones</th>
+      
+
+    </thead>
+    <tbody>
+      <tr   *ngFor="let inseminacion of inseminaciones.inseminaciones">
+        <td  > {{ inseminacion.fecha}}</td>
+        
+        <td *ngIf="inseminacion.resultado">
+          <mat-icon class="mat-18" style="color:green;">check_circle</mat-icon>
+        </td>
+        <td *ngIf="!inseminacion.resultado">
+          <mat-icon class="mat-18" color="warn">dangerous</mat-icon>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+   
+</div>
+<div mat-dialog-actions style="display: flex;justify-content: center;">
+     
+  <button mat-raised-button (click)="onCancel()" color="warm">Cerrar</button>
+</div>
