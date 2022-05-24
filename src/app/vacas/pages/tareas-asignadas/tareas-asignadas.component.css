@@ -1,0 +1,10 @@
+td ,th{
+    text-align: center ;
+    height: 60px;
+    vertical-align: middle;
+}
+
+.th-title{
+    text-align: center;
+
+}

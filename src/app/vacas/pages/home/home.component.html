@@ -1,0 +1,88 @@
+<mat-sidenav-container fullscreen>
+        <mat-sidenav #sidenav mode="push" >
+            <mat-toolbar color="primary">
+                <div style="display:flex;align-items: center;justify-content: center">
+                    <span >Menu</span>
+                </div>
+            </mat-toolbar>
+            <mat-nav-list  style="margin: 2em;">
+                <div style="display: flex;justify-content: center;margin-top: .6em;margin-bottom: .6em;flex-direction: column;align-items: center;">
+                    <mat-icon [inline]="true" style="font-size: 4rem;">account_circle</mat-icon>
+                    <small style="font-size: 1.6em;margin-top: 1.5em;">{{ usuario ? usuario.nombre + ' ' +usuario.apellido_paterno : '' }} </small>
+                    <h6> {{ usuario ?  usuario.rolName : '' }} </h6>
+                  
+
+                  </div>
+
+                  
+                <a routerLink="./asignartareas" 
+                    mat-list-item
+                    (click)="sidenav.toggle()"
+                    *ngIf="usuario?.idRol == 1"
+                    >
+                    <mat-icon mat-list-icon>admin_panel_settings</mat-icon>
+                    Asignar Actividades
+                </a>
+                <a routerLink="./mistareas" 
+                    mat-list-item
+                    (click)="sidenav.toggle()"
+                    *ngIf="usuario?.idRol == 2"
+                    >
+                    <mat-icon mat-list-icon>assignment</mat-icon>
+                    Mis Actividades
+                </a>
+
+             
+                <a routerLink="./listado" 
+                    mat-list-item
+                    (click)="sidenav.toggle()"
+                    >
+                    <mat-icon mat-list-icon>label</mat-icon>
+                    Lista de Vacas
+                </a>
+                <a routerLink="./agregar" 
+                    mat-list-item
+                    (click)="sidenav.toggle()"
+                    >
+                    <mat-icon mat-list-icon>add</mat-icon>
+                    Añadir Vaca
+                </a>
+                <a routerLink="./lechexdia" 
+                    mat-list-item
+                    (click)="sidenav.toggle()"
+                    >
+                    <mat-icon mat-list-icon>local_drink</mat-icon>
+                    Registro de leche 
+                </a>
+                <a routerLink="./reporteleche" 
+                mat-list-item
+                (click)="sidenav.toggle()"
+                >
+                <mat-icon mat-list-icon>trending_up</mat-icon>
+                    Reportes de Leche
+            </a>
+
+          
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-toolbar >
+            
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon class="mat-18">menu</mat-icon>
+            </button>
+            <span  style="border-color: red; text-align: center;margin: auto; color: white;"> {{ pestana}} </span>
+
+            <button mat-raised-button (click)="logout()" color="warn">
+                <mat-icon class="mat-18">logout</mat-icon>
+            </button>
+           
+        </mat-toolbar>
+        <!-- Body -->
+
+        <div class="container">
+            <router-outlet></router-outlet>
+
+
+        </div>
+        
+</mat-sidenav-container>

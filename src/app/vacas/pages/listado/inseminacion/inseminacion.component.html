@@ -1,0 +1,21 @@
+
+<h1 mat-dialog-title >Inseminación</h1>
+<div mat-dialog-content style="display: flex;justify-content: center; flex-direction: column; align-items: center;">
+  <p> <strong> Selecciona una fecha </strong></p>
+  <mat-form-field appearance="outline" >
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input matInput [matDatepicker]="datepicker"  (dateInput) =setDate($event.value)>
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+  <!-- #docregion datepicker-actions -->
+    <mat-datepicker #datepicker>
+    
+    </mat-datepicker>
+  <!-- #enddocregion datepicker-actions -->
+  </mat-form-field>
+   
+</div>
+<div mat-dialog-actions style="display: flex;justify-content: center;">
+  <button mat-raised-button (click)="guardar( data.id)" color="primary">Guardar</button>
+     
+  <button mat-raised-button (click)="onCancel()" color="warm">Cerrar</button>
+</div>

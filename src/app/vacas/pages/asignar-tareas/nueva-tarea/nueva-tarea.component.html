@@ -1,0 +1,29 @@
+<div style="margin-bottom:1em ;">
+
+    <mat-form-field appearance="outline"  style="width: 350px">
+        <mat-label>Obrero </mat-label>
+        <mat-select (selectionChange) ="setObrero( $event.value)">
+          <mat-option *ngFor="let option of options"  [value]="option.id">{{ option.nombre + ' ' +option.apellido_paterno}}</mat-option>
+        </mat-select>
+        <mat-hint> {{ errorObrero}}</mat-hint>
+    </mat-form-field>
+     
+    <mat-form-field class="example-full-width" appearance="fill"  style="width:100% ;">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput placeholder="Escribe una descripcion..."   [(ngModel)]="descripcion" (ngModelChange) ="setValueDescripcion($event)"></textarea>
+        <mat-hint>{{errorDescripcion}}</mat-hint>
+      </mat-form-field>
+
+</div>
+
+<div class="row mt-2" >
+    <div class="col-6"></div>
+    <div class="col-3">
+        <button mat-raised-button (click)="guardar()" color="primary">Guardar</button>
+
+    </div>
+    <div class="col-3">
+        <button mat-raised-button (click)="onCancel()"  color="warn">Cerrar</button>
+
+    </div>
+</div>

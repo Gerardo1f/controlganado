@@ -1,0 +1,101 @@
+<h1>Gráficas </h1>
+<hr>
+<div class="row">
+    <div class="col-6">
+        <h2> Reporte Anual</h2>
+    
+
+    </div>
+    <div class="col-6">
+        <h2>Reporte Por Meses</h2>
+        <mat-form-field appearance="outline"  style="width: 350px">
+
+            <mat-select (selectionChange) ="setAno( $event.value)" value="2022">
+            <mat-option  value="2022" selected>2022</mat-option>
+            <mat-option  value="2021">2021</mat-option>
+            <mat-option  value="2020">2020</mat-option>
+            <mat-option  value="2019">2019</mat-option>
+            <mat-option  value="2018">2018</mat-option>
+            <mat-option  value="2017">2017</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas>
+        </div>
+        
+        
+    </div>
+    <div class="col-6">
+        <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartDataMeses"
+                    [labels]="barChartLabelsMeses"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas>
+        </div>
+
+         
+    </div>
+
+
+
+</div>
+<div class="row">
+    <h2>Reporte Individual</h2>
+    <div class="col-6">
+        <mat-form-field appearance="outline" style="margin-right:2em ;">
+
+            <mat-select (selectionChange) ="setAnoIndividual( $event.value)" value="2022">
+            <mat-option  value="2022" selected>2022</mat-option>
+            <mat-option  value="2021">2021</mat-option>
+            <mat-option  value="2020">2020</mat-option>
+            <mat-option  value="2019">2019</mat-option>
+            <mat-option  value="2018">2018</mat-option>
+            <mat-option  value="2017">2017</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" >
+            <mat-label>Código Vaca</mat-label>
+            <input matInput placeholder="código de vaca" [(ngModel)]="codigoVaca"  (ngModelChange) ="setCodigoVaca($event)" >
+    
+            <mat-icon matSuffix>monitor_weight</mat-icon>
+            <mat-hint> {{ codigoValid }} </mat-hint>
+    
+        </mat-form-field>
+        
+        <button mat-raised-button (click)="busquedaIndividual()" color="primary"  style="margin-left: 3em">Buscar</button>
+
+    </div>
+   
+
+
+    <div style="display: block">
+        <canvas baseChart
+                [datasets]="barChartDataMesesIndividual"
+                [labels]="barChartLabelsMeses"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+        </canvas>
+    </div>
+</div>
+
+
+
+
+

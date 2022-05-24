@@ -1,0 +1,61 @@
+<div style="padding: 6em;">
+    <div class="buttons">
+        <mat-form-field appearance="outline" class="example-form-field">
+            <mat-label>Fecha</mat-label>
+            <input matInput [matDatepicker]="datepicker"  (dateInput) =setDate($event.value) class="date" >
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <!-- #docregion datepicker-actions -->
+            <mat-datepicker #datepicker>
+            
+            </mat-datepicker>
+          <!-- #enddocregion datepicker-actions -->
+          </mat-form-field>
+          <div>
+            <button mat-raised-button (click)="verVacas()" color="accent">Buscar</button>
+            <button mat-raised-button (click)="guardarLeche()" color="primary">Guardar</button>
+          </div>
+      
+    </div>
+
+   
+    <table mat-table [dataSource]="vacas" class="mat-elevation-z8 table" >
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+        <!-- Position Column -->
+        <ng-container matColumnDef="codigoVaca">
+        <th mat-header-cell *matHeaderCellDef   class="th-title"> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigoVaca}} </td>
+        </ng-container>
+        <ng-container matColumnDef="pesoKgs">
+            <th mat-header-cell *matHeaderCellDef  class="th-title"> Peso </th>
+            <td mat-cell *matCellDef="let element"> {{element.pesoKgs}} </td>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="razaName">
+            <th mat-header-cell *matHeaderCellDef  class="th-title"> Raza </th>
+            <td mat-cell *matCellDef="let element"> {{element.razaName}} </td>
+        </ng-container>
+    
+           
+        <ng-container matColumnDef="cantidadLts">
+            <th mat-header-cell *matHeaderCellDef  class="th-title"> Cantidad Lts </th>
+            <td mat-cell *matCellDef="let element">  
+                <mat-form-field appearance="outline"  style="width: 350px; margin: 1.5em;">
+                    <mat-label>Leche</mat-label>
+                    <input matInput placeholder="Leche" [(ngModel)]="element.cantidadLts"  (ngModelChange) ="setValue(element.id , $event)" >
+            
+                    <mat-icon matSuffix>local_drink</mat-icon>
+                </mat-form-field>
+            
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+ 
+
+ 
