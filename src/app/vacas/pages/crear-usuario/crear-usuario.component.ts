@@ -130,5 +130,10 @@ export class CrearUsuarioComponent implements OnInit {
 
   }
 
+  cancelar(){
+    this.router.navigate(['./vacas/listaUsuarios']);
+
+  }
+
 }
  
