@@ -4,7 +4,7 @@
         <div class="col-3">
             <mat-form-field appearance="outline" >
                 <mat-label>Nombre</mat-label>
-                <input matInput placeholder="Nombre"  [(ngModel)]="nombre"  (ngModelChange) ="nombre = $event" >
+                <input matInput placeholder="Nombre"  [(ngModel)]="nombre" autocomplete="off"  (ngModelChange) ="nombre = $event" >
                 <mat-icon matSuffix>face</mat-icon>
                 <mat-hint>{{ nombreFail }}</mat-hint>
             </mat-form-field>
@@ -14,7 +14,7 @@
         <div class="col-3">
             <mat-form-field appearance="outline" >
                 <mat-label>Apellido Paterno</mat-label>
-                <input matInput placeholder="Apellido Paterno"  [(ngModel)]="apellidoPat"  (ngModelChange) ="apellidoPat = $event" >
+                <input matInput placeholder="Apellido Paterno" autocomplete="off"  [(ngModel)]="apellidoPat"  (ngModelChange) ="apellidoPat = $event" >
                 <mat-icon matSuffix>face</mat-icon>
                 <mat-hint>{{ apellidoPatFail }}</mat-hint>
             </mat-form-field>
@@ -22,7 +22,7 @@
         <div class="col-3">
             <mat-form-field appearance="outline" >
                 <mat-label>Apellido Materno</mat-label>
-                <input matInput placeholder="Apellido Materno"  [(ngModel)]="apellidoMat"  (ngModelChange) ="apellidoMat = $event" >
+                <input matInput placeholder="Apellido Materno" autocomplete="off"  [(ngModel)]="apellidoMat"  (ngModelChange) ="apellidoMat = $event" >
                 <mat-icon matSuffix>face</mat-icon>
                 <mat-hint>{{ apellidoMatFail }}</mat-hint>
             </mat-form-field>
@@ -33,7 +33,7 @@
         <div class="col-3">
             <mat-form-field appearance="outline">
                 <mat-label>Código Empleado</mat-label>
-                <input matInput placeholder="Codigo Empleado"  [(ngModel)]="codigoEmpleado" [disabled]="habilitar"  (ngModelChange) ="codigoEmpleado = $event" >
+                <input matInput placeholder="Codigo Empleado" autocomplete="off"  [(ngModel)]="codigoEmpleado" [disabled]="habilitar"  (ngModelChange) ="codigoEmpleado = $event" >
                 <mat-icon matSuffix>account_circle</mat-icon>
                 <mat-hint>{{ codigoEmpleadoFail }}</mat-hint>
             </mat-form-field>
@@ -43,7 +43,7 @@
         <div class="col-3">
             <mat-form-field appearance="outline" >
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" type="password"  [(ngModel)]="password"  (ngModelChange) ="password = $event" >
+                <input matInput placeholder="Password" type="password"  autocomplete="off" [(ngModel)]="password"  (ngModelChange) ="password = $event" >
                 <mat-icon matSuffix>lock</mat-icon>
                 <mat-hint>{{ passwordFail }}</mat-hint>
             </mat-form-field>
@@ -66,7 +66,7 @@
         <div class="col-6"></div>
         <div class="col-3">
             <button mat-raised-button   (click) = "guardar()" color="primary" style="margin-right: 10px;">Guardar</button>
-            <button mat-raised-button routeLink="./listado" color="warn" routerLink="./listaUsuarios">Cancelar</button>
+            <button mat-raised-button routeLink="./listaUsuarios" color="warn"  >Cancelar</button>
 
         </div>
         

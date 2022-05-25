@@ -2,13 +2,13 @@
     <div style="display: flex; flex-direction: column;margin: 4em;">
         <mat-form-field appearance="outline" style="width: 350px;">
             <mat-label>Código vaca</mat-label>
-            <input matInput placeholder="Código"  [(ngModel)]="objVaca.codigoVaca"  (ngModelChange) ="setValueCodigo($event)" [disabled]="habilitar" >
+            <input matInput placeholder="Código"  [(ngModel)]="objVaca.codigoVaca"  autocomplete="off" (ngModelChange) ="setValueCodigo($event)" [disabled]="habilitar" >
             <mat-icon matSuffix>house_siding</mat-icon>
             <mat-hint>{{ codigoValid }}</mat-hint>
         </mat-form-field>
         <mat-form-field appearance="outline"  style="width: 350px;">
             <mat-label>Peso</mat-label>
-            <input matInput placeholder="Peso" [(ngModel)]="objVaca.pesoKgs"  (ngModelChange) ="setValuePeso($event)" >
+            <input matInput placeholder="Peso" [(ngModel)]="objVaca.pesoKgs" autocomplete="off"  (ngModelChange) ="setValuePeso($event)" >
     
             <mat-icon matSuffix>monitor_weight</mat-icon>
             <mat-hint> {{ pesoValid }} </mat-hint>
@@ -17,15 +17,15 @@
     <div style="display: flex; flex-direction: column;margin: 4em;">
         <mat-form-field appearance="outline"  style="width: 350px">
             <mat-label>Raza </mat-label>
-            <mat-select (selectionChange) ="setRaza( $event.value)" [(ngModel)]="objVaca.idRaza">
+            <mat-select (selectionChange) ="setRaza( $event.value)" autocomplete="off" [(ngModel)]="objVaca.idRaza">
               <mat-option *ngFor="let option of options"  [value]="option.id">{{ option.descripcion}}</mat-option>
             </mat-select>
             <mat-hint align="end">{{ idRazaValid }}</mat-hint>
         </mat-form-field>
         <mat-form-field appearance="outline" class="example-form-field">
             <mat-label>Fecha de nacimiento</mat-label>
-            <input matInput [matDatepicker]="datepicker"  (dateInput) ="setDate($event.value)"  *ngIf="!id">
-            <input matInput [matDatepicker]="datepicker"  (dateInput) ="setDate($event.value)" *ngIf="id" [(ngModel)]="objVaca.fechaNac" disabled >
+            <input matInput [matDatepicker]="datepicker"  (dateInput) ="setDate($event.value)" autocomplete="off"  *ngIf="!id">
+            <input matInput [matDatepicker]="datepicker"  (dateInput) ="setDate($event.value)"  autocomplete="off" *ngIf="id" [(ngModel)]="objVaca.fechaNac" disabled >
 
             <mat-hint> {{ fechaValid }}</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
