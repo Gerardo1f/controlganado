@@ -73,6 +73,8 @@ export class AgregarComponent implements OnInit {
     
 
     if(this.id){
+    this.VacasService.pestana='Editar Vaca';
+
       this.VacasService.ObtenerVaca(this.id).subscribe(
         resp => {
           this.objVaca= resp;
@@ -136,7 +138,9 @@ export class AgregarComponent implements OnInit {
   setDate(event: Date){
 
     let date = event;
-    let fecha = date.getFullYear() + '-' +this.mesesNum[date.getMonth() + 1] + "-" +  date.getDate() ;
+    let fecha = date.getFullYear() + '-' +this.mesesNum[date.getMonth() ] + "-" +  date.getDate() ;
+    
+    
     this.objVaca.fechaNac=fecha;
 
 

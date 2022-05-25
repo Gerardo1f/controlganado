@@ -24,7 +24,9 @@
         </mat-form-field>
         <mat-form-field appearance="outline" class="example-form-field">
             <mat-label>Fecha de nacimiento</mat-label>
-            <input matInput [matDatepicker]="datepicker"  (dateInput) =setDate($event.value) [(ngModel)]="objVaca.fechaNac">
+            <input matInput [matDatepicker]="datepicker"  (dateInput) ="setDate($event.value)"  *ngIf="!id">
+            <input matInput [matDatepicker]="datepicker"  (dateInput) ="setDate($event.value)" *ngIf="id" [(ngModel)]="objVaca.fechaNac" disabled >
+
             <mat-hint> {{ fechaValid }}</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
           <!-- #docregion datepicker-actions -->

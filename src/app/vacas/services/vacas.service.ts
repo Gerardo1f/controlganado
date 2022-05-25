@@ -33,6 +33,14 @@ export class VacasService {
       'viva':0
     });
   }
+
+    
+  DeleteUsuario(id : number) : Observable<Respuesta>{
+    return this.http.post<Respuesta>('http://159.223.204.114/api/user/delete',{
+      'id':id,
+       
+    });
+  }
   
   
   Inseminar(id : number,fecha:string) : Observable<Respuesta>{
@@ -152,6 +160,11 @@ export class VacasService {
 
   }
 
+  obtenerUsuario(id : string) : Observable <Usuario>{
+    return this.http.get<Usuario>('http://159.223.204.114/api/user/getUser/'+ id);
+
+  }
+
   obtenerRazas() : Observable<Raza[]>{
     return this.http.get<Raza[]>('http://159.223.204.114/api/vacas/razas');
 
@@ -164,5 +177,35 @@ export class VacasService {
       id  : id
     });
   }
+
+
+
+  crearUsuario(nombre : string , apellido_paterno : string , apellido_materno : string , codigoEmpleado: string ,  password : string , idRol : number){
+    return this.http.post<any>('http://159.223.204.114/api/user/create',{
+      nombre  :nombre,
+      apellido_paterno    :apellido_paterno,
+      apellido_materno  :apellido_materno,
+      codigoEmpleado     :codigoEmpleado,
+      password :password,
+      idRol    :idRol
+    });
+  }
+
+
+  editarUsuario(id : string | null,nombre : string , apellido_paterno : string , apellido_materno : string , codigoEmpleado: string ,  password : string , idRol : number){
+    return this.http.post<any>('http://159.223.204.114/api/user/update',{
+      id : id,
+      nombre  :nombre,
+      apellido_paterno    :apellido_paterno,
+      apellido_materno  :apellido_materno,
+      codigoEmpleado     :codigoEmpleado,
+      password :password,
+      idRol    :idRol
+    });
+  }
 }
 
+
+
+
+//http://127.0.0.1:8000

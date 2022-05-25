@@ -10,6 +10,8 @@ import { LechexdiasComponent } from './pages/lechexdias/lechexdias.component';
 import { ReporteLecheComponent } from './pages/reporte-leche/reporte-leche.component';
 import { TareasAsignadasComponent } from './pages/tareas-asignadas/tareas-asignadas.component';
 import { AsignarTareasComponent } from './pages/asignar-tareas/asignar-tareas.component';
+import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
+import { ListadoUsuarioComponent } from './pages/listado-usuario/listado-usuario.component';
 
 
 
@@ -27,6 +29,10 @@ const rutas: Routes = [
       { path: 'reporteleche', component: ReporteLecheComponent },
       { path: 'mistareas', component: TareasAsignadasComponent },
       { path: 'asignartareas', component: AsignarTareasComponent },
+      { path: 'crearUsuario', component: CrearUsuarioComponent },
+      { path: 'listaUsuarios', component: ListadoUsuarioComponent },
+      { path: 'editarUser/:id', component: CrearUsuarioComponent },
+
       { path: '**', redirectTo: 'listado' }
     ]
   }
@@ -36,7 +42,7 @@ const rutas: Routes = [
 
 @NgModule({
   imports: [
-RouterModule.forChild( rutas )
+  RouterModule.forChild( rutas )
   ],
   exports: [
     RouterModule

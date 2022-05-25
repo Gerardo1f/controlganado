@@ -1543,6 +1543,11 @@ class VacasService {
             'viva': 0
         });
     }
+    DeleteUsuario(id) {
+        return this.http.post('http://159.223.204.114/api/user/delete', {
+            'id': id,
+        });
+    }
     Inseminar(id, fecha) {
         return this.http.post('http://159.223.204.114/api/vacas/inseminacion', {
             'idVaca': id,
@@ -1619,12 +1624,36 @@ class VacasService {
     ObtenerVaca(id) {
         return this.http.get('http://159.223.204.114/api/vacas/obtenerVaca/' + id);
     }
+    obtenerUsuario(id) {
+        return this.http.get('http://159.223.204.114/api/user/getUser/' + id);
+    }
     obtenerRazas() {
         return this.http.get('http://159.223.204.114/api/vacas/razas');
     }
     liberar(id) {
         return this.http.post('http://159.223.204.114/api/vacas/liberar', {
             id: id
+        });
+    }
+    crearUsuario(nombre, apellido_paterno, apellido_materno, codigoEmpleado, password, idRol) {
+        return this.http.post('http://159.223.204.114/api/user/create', {
+            nombre: nombre,
+            apellido_paterno: apellido_paterno,
+            apellido_materno: apellido_materno,
+            codigoEmpleado: codigoEmpleado,
+            password: password,
+            idRol: idRol
+        });
+    }
+    editarUsuario(id, nombre, apellido_paterno, apellido_materno, codigoEmpleado, password, idRol) {
+        return this.http.post('http://159.223.204.114/api/user/update', {
+            id: id,
+            nombre: nombre,
+            apellido_paterno: apellido_paterno,
+            apellido_materno: apellido_materno,
+            codigoEmpleado: codigoEmpleado,
+            password: password,
+            idRol: idRol
         });
     }
 }

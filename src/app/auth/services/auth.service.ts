@@ -50,7 +50,7 @@ export class AuthService {
       } )
     );
   }
-
+  
   getInfoUser(numEmpleado : string | null){
     this.http.post<Usuario>('http://159.223.204.114/api/user/userAuth',{
       'numempleado':numEmpleado,

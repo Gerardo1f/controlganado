@@ -15,14 +15,30 @@
                   </div>
 
                   
-                <a routerLink="./asignartareas" 
+                <a routerLink="./crearUsuario" 
                     mat-list-item
                     (click)="sidenav.toggle()"
                     *ngIf="usuario?.idRol == 1"
                     >
-                    <mat-icon mat-list-icon>admin_panel_settings</mat-icon>
-                    Asignar Actividades
+                    <mat-icon mat-list-icon>add_circle</mat-icon>
+                    Crear usuario
                 </a>
+                <a routerLink="./listaUsuarios" 
+                mat-list-item
+                (click)="sidenav.toggle()"
+                *ngIf="usuario?.idRol == 1"
+                >
+                <mat-icon mat-list-icon>list</mat-icon>
+                Lista de usuarios
+                </a>
+                <a routerLink="./asignartareas" 
+                mat-list-item
+                (click)="sidenav.toggle()"
+                *ngIf="usuario?.idRol == 1"
+                >
+                <mat-icon mat-list-icon>admin_panel_settings</mat-icon>
+                Asignar Actividades
+            </a>
                 <a routerLink="./mistareas" 
                     mat-list-item
                     (click)="sidenav.toggle()"
@@ -31,6 +47,8 @@
                     <mat-icon mat-list-icon>assignment</mat-icon>
                     Mis Actividades
                 </a>
+
+
 
              
                 <a routerLink="./listado" 
@@ -60,7 +78,7 @@
                 >
                 <mat-icon mat-list-icon>trending_up</mat-icon>
                     Reportes de Leche
-            </a>
+                 </a>
 
           
             </mat-nav-list>

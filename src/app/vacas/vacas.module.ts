@@ -16,6 +16,8 @@ import { ChartsModule } from 'ng2-charts';
 import { TareasAsignadasComponent } from './pages/tareas-asignadas/tareas-asignadas.component';
 import { AsignarTareasComponent } from './pages/asignar-tareas/asignar-tareas.component';
 import { NuevaTareaComponent } from './pages/asignar-tareas/nueva-tarea/nueva-tarea.component';
+import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
+import { ListadoUsuarioComponent } from './pages/listado-usuario/listado-usuario.component';
 
 
 
@@ -33,6 +35,8 @@ import { NuevaTareaComponent } from './pages/asignar-tareas/nueva-tarea/nueva-ta
     TareasAsignadasComponent,
     AsignarTareasComponent,
     NuevaTareaComponent,
+    CrearUsuarioComponent,
+    ListadoUsuarioComponent,
        
   ],
   imports: [
