@@ -59,7 +59,7 @@ export class ListadoUsuarioComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    this.vacasService.pestana = 'Listado de Usuarios';
+    this.vacasService.pestana = 'Listado de Putos';
     this.getUsers();
   }
   
