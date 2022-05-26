@@ -56634,7 +56634,7 @@ class ListadoUsuarioComponent {
             this.table.renderRows();
     }
     ngOnInit() {
-        this.vacasService.pestana = 'Listado de Putos';
+        this.vacasService.pestana = 'Listado de Usuarios';
         this.getUsers();
     }
     eliminar(id) {
