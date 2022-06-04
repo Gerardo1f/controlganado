@@ -10,7 +10,7 @@ import { VacasService } from 'src/app/vacas/services/vacas.service';
   styles: [
     `
     .container{
-      margin: 2em;
+      margin: auto;
       
     }
     `

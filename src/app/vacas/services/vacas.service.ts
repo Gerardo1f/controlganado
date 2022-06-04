@@ -203,9 +203,27 @@ export class VacasService {
       idRol    :idRol
     });
   }
+  newMedicamento( fecha: string , nombreM : string , id: number ){
+    return this.http.post<any>('http://159.223.204.114/api/vacas/medicamento/create',{
+      fecha : fecha,
+      nombreMedicamento: nombreM,
+      idVaca :id
+    });
+  }
+
+
+  medicamentos( id: number ){
+    return this.http.post<any>('http://159.223.204.114/api/vacas/medicamento/medicamentos',{
+      idVaca : id,
+     
+    });
+  }
+
+
 }
 
 
 
 
-//http://127.0.0.1:8000
+
+//

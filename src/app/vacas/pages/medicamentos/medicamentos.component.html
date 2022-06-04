@@ -1,0 +1,62 @@
+<div style="padding: 6em;">
+   
+    
+    <table mat-table [dataSource]="vacas" class="mat-elevation-z8 table" >
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+        <!-- Position Column -->
+        <ng-container matColumnDef="codigoVaca">
+        <th mat-header-cell *matHeaderCellDef   class="th-title"> <label class="label-title">No.  </label></th>
+        <td mat-cell *matCellDef="let element">  {{element.codigoVaca}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="pesoKgs">
+            <th mat-header-cell *matHeaderCellDef  class="th-title"> <label class="label-title">Peso </label></th>
+            <td mat-cell *matCellDef="let element" style="text-align:center ;">  <span style="margin-top:4px ;">  {{element.pesoKgs}} </span></td>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="razaName">
+            <th mat-header-cell *matHeaderCellDef  class="th-title"> <label class="label-title">Raza  </label> </th>
+            <td mat-cell *matCellDef="let element"> {{element.razaName}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="ultimaInseminacion">
+            <th mat-header-cell *matHeaderCellDef  class="th-title"> <label class="label-title">Historial Medico  </label></th>
+            <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button  (click)="openMedicamentos(element.id)">
+                        <mat-icon style="color:green;" >visibility</mat-icon>
+                    </button>
+              
+            </td>
+
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="fechaNac">
+            <th mat-header-cell *matHeaderCellDef  class="th-title"> <label class="label-title">Fecha Nacimiento </label> </th>
+            <td mat-cell *matCellDef="let element"> {{element.fechaNac}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef class="th-title"><label class="label-title"> Opciones  </label></th>
+            <td mat-cell *matCellDef="let element" > 
+                <button   mat-raised-button color="accent"  (click)="openDialog(element.id)"  style="margin: 2px;">
+                    Agregar Medicamento
+                </button>
+          
+                
+            </td>
+        </ng-container>
+        
+    
+    
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+ 
+
+ 

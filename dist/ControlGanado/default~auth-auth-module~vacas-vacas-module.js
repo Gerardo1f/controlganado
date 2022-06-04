@@ -1656,6 +1656,18 @@ class VacasService {
             idRol: idRol
         });
     }
+    newMedicamento(fecha, nombreM, id) {
+        return this.http.post('http://159.223.204.114/api/vacas/medicamento/create', {
+            fecha: fecha,
+            nombreMedicamento: nombreM,
+            idVaca: id
+        });
+    }
+    medicamentos(id) {
+        return this.http.post('http://159.223.204.114/api/vacas/medicamento/medicamentos', {
+            idVaca: id,
+        });
+    }
 }
 VacasService.ɵfac = function VacasService_Factory(t) { return new (t || VacasService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
 VacasService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: VacasService, factory: VacasService.ɵfac, providedIn: 'root' });

@@ -18,11 +18,16 @@ import { AsignarTareasComponent } from './pages/asignar-tareas/asignar-tareas.co
 import { NuevaTareaComponent } from './pages/asignar-tareas/nueva-tarea/nueva-tarea.component';
 import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
 import { ListadoUsuarioComponent } from './pages/listado-usuario/listado-usuario.component';
+import { MedicamentosComponent } from './pages/medicamentos/medicamentos.component';
+import { VerComponent } from './pages/medicamentos/ver/ver.component';
+import { AgregarMComponent } from './pages/medicamentos/agregar-m/agregar-m.component';
+
 
 
 
 @NgModule({
   declarations: [
+    AgregarMComponent,
     AgregarComponent,
     BuscarComponent,
     VacaComponent,
@@ -37,6 +42,9 @@ import { ListadoUsuarioComponent } from './pages/listado-usuario/listado-usuario
     NuevaTareaComponent,
     CrearUsuarioComponent,
     ListadoUsuarioComponent,
+    MedicamentosComponent,
+    VerComponent
+    
        
   ],
   imports: [

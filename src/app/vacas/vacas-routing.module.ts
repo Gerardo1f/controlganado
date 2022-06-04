@@ -12,6 +12,7 @@ import { TareasAsignadasComponent } from './pages/tareas-asignadas/tareas-asigna
 import { AsignarTareasComponent } from './pages/asignar-tareas/asignar-tareas.component';
 import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
 import { ListadoUsuarioComponent } from './pages/listado-usuario/listado-usuario.component';
+import { MedicamentosComponent } from './pages/medicamentos/medicamentos.component';
 
 
 
@@ -32,6 +33,9 @@ const rutas: Routes = [
       { path: 'crearUsuario', component: CrearUsuarioComponent },
       { path: 'listaUsuarios', component: ListadoUsuarioComponent },
       { path: 'editarUser/:id', component: CrearUsuarioComponent },
+      { path: 'medicamentos', component: MedicamentosComponent },
+
+
 
       { path: '**', redirectTo: 'listado' }
     ]
@@ -42,7 +46,7 @@ const rutas: Routes = [
 
 @NgModule({
   imports: [
-  RouterModule.forChild( rutas )
+RouterModule.forChild( rutas )
   ],
   exports: [
     RouterModule

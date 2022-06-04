@@ -1,0 +1,28 @@
+
+<h1 mat-dialog-title >Historial de medicamento</h1>
+<div mat-dialog-content>
+  <table>
+    <thead>
+      <tr>
+        <td style="font-weight: bold;"> Fecha </td>
+        <td  style="font-weight: bold;">Nombre</td>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr   *ngFor="let medicamento of medicamentos ">
+        <td  > {{ medicamento.fecha}}</td>
+        <td  > {{ medicamento.nombreMedicamento}}</td>
+        
+        
+      </tr>
+    </tbody>
+
+  </table>
+   
+</div>
+<div mat-dialog-actions style="display: flex;justify-content: center;">
+     
+  <button mat-raised-button (click)="onCancel()" color="warm">Cerrar</button>
+</div>
